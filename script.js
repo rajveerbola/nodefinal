@@ -3,6 +3,7 @@ const hbs = require('hbs')
 var app =  express();
 const fs = require('fs')
 const port = process.env.PORT || 8080;
+const axios = require('axios')
 
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -11,7 +12,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
-    respone.render(final.hbs)
+    respone.render(main.hbs)
 });
 
 app.get('/info', (request, response) => {
@@ -19,7 +20,8 @@ app.get('/info', (request, response) => {
     title:'Final Page'
 });
 
-app.post('/weather', (req,rep) => {
+
+app.post('/weather', (req,resp) => {
 
 
 
