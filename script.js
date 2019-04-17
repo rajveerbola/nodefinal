@@ -11,13 +11,28 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
-    response.send('<h1>Hello Express!</h1>')
+    respone.render(final.hbs)
 });
 
 app.get('/info', (request, response) => {
    respone.render(final.hbs)
     title:'Final Page'
 });
+
+app.post('/weather', (req,rep) => {
+
+
+
+
+    response.render('final.hbs', {
+        final: rate
+    }
+
+
+
+
+
+})
 
 app.listen(port,()=>{
     console.log(`Server is up on the port ${port}`);
