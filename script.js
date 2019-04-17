@@ -6,6 +6,7 @@ const port = process.env.PORT || 8080;
 const axios = require('axios')
 
 
+
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
@@ -50,17 +51,40 @@ app.get('/',(request, response)=> {
     })
 });
 
-app.get('/currency', (request, response) => {
-    response.render('currency.hbs', {
-        title: 'Currency',
-        year: new Date().getFullYear(),
-        header: 'Currency',
-    })
-});
+/*app.get('/nasa', (request, response) => {
+    const getCode = async (search) => {
+        try {
+           const response = await (axios.get(`https://images-api.nasa.gov/search?q=earth`));
+            return response.data[0].collection
+        } catch (e) {
+            response.render('nasa.hbs', {
+                title: 'ERROR',
+                result: 'Error: Image is not found'
+           })
+        }
+    };
+});*/
+
+    app.get('/nasa', (request, response) => {
+        response.render('nasa.hbs', {
+            title: 'Nasa'
+        })
+    });
 
 
 
 
-app.listen(port,()=>{
-    console.log('Server is up on the port 8000');
-});
+
+        /*app.get('/currency', (request, response) => {
+            response.render('currency.hbs', {
+                title: 'Currency',
+                year: new Date().getFullYear(),
+                header: 'Currency',
+            })
+        });*/
+
+
+        app.listen(port, () => {
+        console.log(`Server is up on the port ${port}`);
+    });
+
