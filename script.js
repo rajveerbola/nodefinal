@@ -54,7 +54,7 @@ app.get('/',(request, response)=> {
 /*app.get('/nasa', (request, response) => {
     const getCode = async (search) => {
         try {
-           const response = await (axios.get(`https://images-api.nasa.gov/search?q=earth`));
+           const response = await (axios.get(`https://jsonplaceholder.typicode.com/photos`));
             return response.data[0].collection
         } catch (e) {
             response.render('nasa.hbs', {
