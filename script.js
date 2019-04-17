@@ -11,7 +11,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (request, response) => {
+/*app.get('/', (request, response) => {
     //response.send('<h1>Hello Express!<h1>');
     response.send({
         name: 'Your Name',
@@ -21,17 +21,10 @@ app.get('/', (request, response) => {
             'UBC'
         ]
     })
-});
-
-app.get('/info', (request, response)=>{
-    response.render('about.hbs', {
-        title: 'About page',
-        year: new Date().getFullYear(),
-        header: 'About Me'
+});*/
 
 
-    })
-});
+
 
 app.get('/info', (request, response)=>{
     response.render('about.hbs', {
@@ -49,7 +42,7 @@ app.get('/404', (request, response) => {
 
 });
 
-app.get('/main',(request, response)=> {
+app.get('/',(request, response)=> {
     response.render('main.hbs', {
         title: 'Main Page',
         year: new Date().getFullYear(),
