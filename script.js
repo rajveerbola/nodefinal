@@ -28,7 +28,7 @@ app.post('/weather', (req,resp) => {
 
     response.render('final.hbs', {
         final: rate
-    }
+    })
 
 
 
